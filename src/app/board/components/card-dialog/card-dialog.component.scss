@@ -1,0 +1,14 @@
+::ng-deep{
+  .example-card {
+    box-shadow: none !important;
+    min-width: 600px;
+    mat-form-field{
+      display: flex;
+      flex-direction: row;
+      .mat-form-field-wrapper{
+        width: 100% !important;
+      }
+    }
+  }
+
+}

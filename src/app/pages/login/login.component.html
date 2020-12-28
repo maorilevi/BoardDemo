@@ -1,0 +1,16 @@
+<div class="login-form">
+  <form [formGroup]="loginForm" (submit)="login()">
+    <h2>Login</h2>
+    <mat-form-field appearance="fill"  style="display: flex;flex-direction: row">
+      <mat-label>email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill"  style="display: flex;flex-direction: row">
+      <mat-label>password</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+    <div  style="display: flex;flex-direction: row">
+      <button mat-stroked-button style="width: 100%">go</button>
+    </div>
+  </form>
+</div>

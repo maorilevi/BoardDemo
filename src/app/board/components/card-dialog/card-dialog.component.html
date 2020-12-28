@@ -1,0 +1,29 @@
+<mat-card class="example-card">
+  <mat-card-content>
+    <form [formGroup]="cardForm" *ngIf="cardForm.controls">
+      <mat-form-field appearance="fill">
+        <mat-label>Author Name</mat-label>
+        <input matInput formControlName="authorName" name="authorName" [readonly]="!canEdit && card">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>What could yot like to say?</mat-label>
+        <textarea matInput formControlName="content" name="content" [readonly]="!canEdit && card"></textarea>
+      </mat-form-field>
+      <div style="display: flex; flex-direction: column" *ngIf="canEdit && card">
+        <mat-label>Wold you like to show something?</mat-label>
+        <input
+          (change)="handleFileInput($event.target.files)" #fileInput type="file"
+          type="file" name="file">
+      </div>
+<!--      <mat-form-field appearance="fill">-->
+
+<!--      </mat-form-field>-->
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button *ngIf="canEdit || !card" (click)="onSave()">SAVE</button>
+    <button mat-button *ngIf="card && canEdit" (click)="onDelete()">DELETE</button>
+    <button mat-button (click)="onCancel()">CANCEL</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,14 @@
+::ng-deep{
+  mat-card {
+    max-width: 300px;
+    min-width: 300px;
+    height: 250px;
+    .mat-card-header-text {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: baseline !important;
+      margin: 0 !important;
+      gap: 15px !important;
+    }
+  }
+}

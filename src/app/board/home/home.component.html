@@ -1,0 +1,8 @@
+<div class="custom-row">
+  <app-card [isCreateNewCardComponent]="true"
+  (onCreateCardClicked)="onCreateCardClicked($event)"></app-card>
+  <app-card *ngFor="let card of cards"
+            (onCardClicked)="onCardClicked($event)"
+            [Card]="card">
+  </app-card>
+</div>

@@ -1,0 +1,19 @@
+<mat-card (click)="onCardCLick()">
+  <mat-card-header *ngIf="!isCreateNewCardComponent">
+<!--    <div mat-card-avatar></div>-->
+    <mat-card-title>{{ (card | async).authorName}}</mat-card-title>
+    <mat-card-subtitle>{{ tempMoment((card | async).date).format('DD-MM-YY HH:mm')}}</mat-card-subtitle>
+  </mat-card-header>
+  <div mat-card-image></div>
+  <mat-card-content>
+    <p  *ngIf="!isCreateNewCardComponent; else newComp">
+      {{(card | async).content}}
+    </p>
+    <ng-template #newComp>
+      <div>
+        <h2>click here to create a new card</h2>
+        <span class="material-icons">add</span>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
